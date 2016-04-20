@@ -12,8 +12,10 @@
 #import "UIView+Extension.h"
 #import "JYNSString+Extension.h"
 
-#define screenW [UIScreen mainScreen].bounds.size.width
-#define screenH [UIScreen mainScreen].bounds.size.height
+#import <QuartzCore/QuartzCore.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+#define kRotationDuration 4.0
 
 @interface JYLoginController ()
 
@@ -32,6 +34,13 @@
 @property (strong, nonatomic) UIView *rightLine;
 
 @property (strong, nonatomic) UIButton *loginBtn;
+@property (strong, nonatomic) UIButton *forgetPwdBtn;
+@property (strong, nonatomic) UIButton *signUpBtn;
+
+//转圈速度
+@property (assign, nonatomic) float rotationDuration;
+
+@property (strong, nonatomic) UIView *bgView;
 
 @end
 
@@ -42,6 +51,37 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self initRound];
+    [self startRotation];
+}
+
+- (void)initRound
+{
+    //Rotation
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    
+    //default RotationDuration value
+    if (self.rotationDuration == 0) {
+        self.rotationDuration = kRotationDuration;
+    }
+    
+    rotationAnimation.duration = self.rotationDuration;
+    rotationAnimation.repeatCount = FLT_MAX;
+    rotationAnimation.cumulative = NO;
+    rotationAnimation.removedOnCompletion = NO; //No Remove
+    [self.rotationView.layer addAnimation:rotationAnimation forKey:@"rotation"];
+}
+
+- (void)startRotation
+{
+    self.view.layer.speed = 1.0;
+    self.view.layer.beginTime = 0.0;
+    CFTimeInterval pausedTime = [self.view.layer timeOffset];
+    CFTimeInterval timeSincePause = [self.view.layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    self.view.layer.beginTime = timeSincePause;
 }
 
 - (JYBackgroundView *)backgroundView
@@ -172,11 +212,10 @@
         _loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
         [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
-        [_loginBtn setAdjustsImageWhenHighlighted:NO];
         [_loginBtn setBackgroundImage:[UIImage imageNamed:@"login_btn_nolmal_icon"] forState:UIControlStateNormal];
-        [_loginBtn setBackgroundImage:[UIImage imageNamed:@"login_btn_seletect_icon"] forState:UIControlStateSelected];
+        [_loginBtn setBackgroundImage:[UIImage imageNamed:@"login_btn_seletect_icon"] forState:UIControlStateHighlighted];
         [_loginBtn setTitleColor:MainBackgroundColor forState:UIControlStateNormal];
-        [_loginBtn setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
+        [_loginBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [_loginBtn addTarget:self action:@selector(loginBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
         
         [self.view addSubview:_loginBtn];
@@ -184,9 +223,54 @@
     return _loginBtn;
 }
 
+- (UIButton *)forgetPwdBtn
+{
+    if (!_forgetPwdBtn) {
+        
+        _forgetPwdBtn = [self createBtnWithTitle:@"忘记密码?"];
+        _forgetPwdBtn.tag = 13;
+    }
+    return _forgetPwdBtn;
+}
+
+- (UIButton *)signUpBtn
+{
+    if (!_signUpBtn) {
+        
+        _signUpBtn = [self createBtnWithTitle:@"快速注册"];
+        _signUpBtn.tag = 14;
+    }
+    return _signUpBtn;
+}
+
+- (UIView *)bgView
+{
+    if (!_bgView) {
+        
+        _bgView = [[UIView alloc] init];
+        
+        _bgView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+        
+        [self.backgroundView addSubview:_bgView];
+    }
+    return _bgView;
+}
+
+- (void)forgetPwdBtnAndSignUpBtnOnClick:(UIButton *)btn
+{
+    switch (btn.tag) {
+        case 13:
+            NSLog(@"%@", btn.currentTitle);
+            break;
+        case 14:
+            NSLog(@"%@", btn.currentTitle);
+            break;
+    }
+}
+
 - (void)loginBtnOnClick
 {
-    self.loginBtn.selected = !self.loginBtn.selected;
+    JYLog(@"登录");
 }
 
 - (void)otherLoginBtnOnClick:(UIButton *)btn
@@ -202,6 +286,21 @@
             JYLog(@"新浪登录");
             break;
     }
+}
+
+- (UIButton *)createBtnWithTitle:(NSString *)title
+{
+    UIButton *btn = [[UIButton alloc] init];
+    
+    [btn setTitleColor:setColor(176, 187, 220) forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
+    btn.titleLabel.font = setFont(14);
+    
+    [btn addTarget:self action:@selector(forgetPwdBtnAndSignUpBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btn];
+    
+    return btn;
 }
 
 - (void)viewWillLayoutSubviews
@@ -230,6 +329,12 @@
     self.rightLine.frame = CGRectMake(self.othersLabel.x + self.othersLabel.width + 10, self.othersLabel.y + ((self.othersLabel.height - 1) * 0.5), self.othersLabel.x - 30, 1);
     
     self.loginBtn.frame = CGRectMake(20, self.backgroundView.y + self.backgroundView.height + 30, screenW - 40, 35);
+    
+    self.forgetPwdBtn.frame = CGRectMake(20, self.loginBtn.y + self.loginBtn.height, 70, 30);
+    
+    self.signUpBtn.frame = CGRectMake(screenW - 70 - 20, self.forgetPwdBtn.y, 70, 30);
+    
+    self.bgView.frame = CGRectMake(10, rotationW * 0.5 + 15, self.backgroundView.width - 20, self.backgroundView.height - (rotationW * 0.5 + 15) - 10);
 }
 
 @end
