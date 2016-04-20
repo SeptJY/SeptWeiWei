@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		5B7473611CC60CF10077E635 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473601CC60CF10077E635 /* main.m */; };
 		5B7473641CC60CF20077E635 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473631CC60CF20077E635 /* AppDelegate.m */; };
-		5B7473671CC60CF20077E635 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473661CC60CF20077E635 /* ViewController.m */; };
-		5B74736A1CC60CF20077E635 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B7473681CC60CF20077E635 /* Main.storyboard */; };
 		5B74736C1CC60CF20077E635 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B74736B1CC60CF20077E635 /* Assets.xcassets */; };
 		5B74736F1CC60CF20077E635 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */; };
 		5B74737A1CC60CF30077E635 /* SeptWeiWeiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473791CC60CF30077E635 /* SeptWeiWeiTests.m */; };
 		5B7473851CC60CF30077E635 /* SeptWeiWeiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473841CC60CF30077E635 /* SeptWeiWeiUITests.m */; };
+		5B7473951CC60F080077E635 /* JYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473931CC60F080077E635 /* JYLoginController.m */; };
+		5B7473961CC60F080077E635 /* JYLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7473941CC60F080077E635 /* JYLoginController.xib */; };
+		5B7473991CC625770077E635 /* JYSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473981CC625770077E635 /* JYSubView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +40,6 @@
 		5B7473601CC60CF10077E635 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B7473621CC60CF10077E635 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5B7473631CC60CF20077E635 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5B7473651CC60CF20077E635 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5B7473661CC60CF20077E635 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5B7473691CC60CF20077E635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B74736B1CC60CF20077E635 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B74736E1CC60CF20077E635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B7473701CC60CF20077E635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +49,11 @@
 		5B7473801CC60CF30077E635 /* SeptWeiWeiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeptWeiWeiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7473841CC60CF30077E635 /* SeptWeiWeiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeptWeiWeiUITests.m; sourceTree = "<group>"; };
 		5B7473861CC60CF30077E635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B7473921CC60F080077E635 /* JYLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLoginController.h; sourceTree = "<group>"; };
+		5B7473931CC60F080077E635 /* JYLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLoginController.m; sourceTree = "<group>"; };
+		5B7473941CC60F080077E635 /* JYLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYLoginController.xib; sourceTree = "<group>"; };
+		5B7473971CC625770077E635 /* JYSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYSubView.h; sourceTree = "<group>"; };
+		5B7473981CC625770077E635 /* JYSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYSubView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +104,11 @@
 		5B74735E1CC60CF10077E635 /* SeptWeiWei */ = {
 			isa = PBXGroup;
 			children = (
-				5B7473621CC60CF10077E635 /* AppDelegate.h */,
-				5B7473631CC60CF20077E635 /* AppDelegate.m */,
-				5B7473651CC60CF20077E635 /* ViewController.h */,
-				5B7473661CC60CF20077E635 /* ViewController.m */,
-				5B7473681CC60CF20077E635 /* Main.storyboard */,
-				5B74736B1CC60CF20077E635 /* Assets.xcassets */,
-				5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */,
-				5B7473701CC60CF20077E635 /* Info.plist */,
+				5B7473921CC60F080077E635 /* JYLoginController.h */,
+				5B7473931CC60F080077E635 /* JYLoginController.m */,
+				5B7473941CC60F080077E635 /* JYLoginController.xib */,
+				5B7473971CC625770077E635 /* JYSubView.h */,
+				5B7473981CC625770077E635 /* JYSubView.m */,
 				5B74735F1CC60CF10077E635 /* Supporting Files */,
 			);
 			path = SeptWeiWei;
@@ -117,6 +117,11 @@
 		5B74735F1CC60CF10077E635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5B7473621CC60CF10077E635 /* AppDelegate.h */,
+				5B7473631CC60CF20077E635 /* AppDelegate.m */,
+				5B74736B1CC60CF20077E635 /* Assets.xcassets */,
+				5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */,
+				5B7473701CC60CF20077E635 /* Info.plist */,
 				5B7473601CC60CF10077E635 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -244,8 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B74736F1CC60CF20077E635 /* LaunchScreen.storyboard in Resources */,
+				5B7473961CC60F080077E635 /* JYLoginController.xib in Resources */,
 				5B74736C1CC60CF20077E635 /* Assets.xcassets in Resources */,
-				5B74736A1CC60CF20077E635 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7473671CC60CF20077E635 /* ViewController.m in Sources */,
 				5B7473641CC60CF20077E635 /* AppDelegate.m in Sources */,
+				5B7473951CC60F080077E635 /* JYLoginController.m in Sources */,
+				5B7473991CC625770077E635 /* JYSubView.m in Sources */,
 				5B7473611CC60CF10077E635 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,14 +314,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5B7473681CC60CF20077E635 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B7473691CC60CF20077E635 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -496,6 +494,7 @@
 				5B74738B1CC60CF30077E635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B74738C1CC60CF30077E635 /* Build configuration list for PBXNativeTarget "SeptWeiWeiTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +503,7 @@
 				5B74738E1CC60CF30077E635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B74738F1CC60CF30077E635 /* Build configuration list for PBXNativeTarget "SeptWeiWeiUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +512,7 @@
 				5B7473911CC60CF30077E635 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
