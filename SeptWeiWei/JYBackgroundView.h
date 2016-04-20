@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYSubView : UIView
+@interface JYBackgroundView : UIView
 
 @end

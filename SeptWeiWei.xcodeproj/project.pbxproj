@@ -14,8 +14,9 @@
 		5B74737A1CC60CF30077E635 /* SeptWeiWeiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473791CC60CF30077E635 /* SeptWeiWeiTests.m */; };
 		5B7473851CC60CF30077E635 /* SeptWeiWeiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473841CC60CF30077E635 /* SeptWeiWeiUITests.m */; };
 		5B7473951CC60F080077E635 /* JYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473931CC60F080077E635 /* JYLoginController.m */; };
-		5B7473961CC60F080077E635 /* JYLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7473941CC60F080077E635 /* JYLoginController.xib */; };
-		5B7473991CC625770077E635 /* JYSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473981CC625770077E635 /* JYSubView.m */; };
+		5B7473991CC625770077E635 /* JYBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473981CC625770077E635 /* JYBackgroundView.m */; };
+		5B7661F81CC7326D00F08E4B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7661F71CC7326D00F08E4B /* UIView+Extension.m */; };
+		5B7661FB1CC74EC200F08E4B /* JYNSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7661FA1CC74EC100F08E4B /* JYNSString+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +52,13 @@
 		5B7473861CC60CF30077E635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7473921CC60F080077E635 /* JYLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLoginController.h; sourceTree = "<group>"; };
 		5B7473931CC60F080077E635 /* JYLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLoginController.m; sourceTree = "<group>"; };
-		5B7473941CC60F080077E635 /* JYLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYLoginController.xib; sourceTree = "<group>"; };
-		5B7473971CC625770077E635 /* JYSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYSubView.h; sourceTree = "<group>"; };
-		5B7473981CC625770077E635 /* JYSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYSubView.m; sourceTree = "<group>"; };
+		5B7473971CC625770077E635 /* JYBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBackgroundView.h; sourceTree = "<group>"; };
+		5B7473981CC625770077E635 /* JYBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBackgroundView.m; sourceTree = "<group>"; };
+		5B7661F51CC7265600F08E4B /* JYDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYDefine.h; sourceTree = "<group>"; };
+		5B7661F61CC7326D00F08E4B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		5B7661F71CC7326D00F08E4B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		5B7661F91CC74EC100F08E4B /* JYNSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JYNSString+Extension.h"; sourceTree = "<group>"; };
+		5B7661FA1CC74EC100F08E4B /* JYNSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JYNSString+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +111,12 @@
 			children = (
 				5B7473921CC60F080077E635 /* JYLoginController.h */,
 				5B7473931CC60F080077E635 /* JYLoginController.m */,
-				5B7473941CC60F080077E635 /* JYLoginController.xib */,
-				5B7473971CC625770077E635 /* JYSubView.h */,
-				5B7473981CC625770077E635 /* JYSubView.m */,
+				5B7473971CC625770077E635 /* JYBackgroundView.h */,
+				5B7473981CC625770077E635 /* JYBackgroundView.m */,
+				5B7661F61CC7326D00F08E4B /* UIView+Extension.h */,
+				5B7661F71CC7326D00F08E4B /* UIView+Extension.m */,
+				5B7661F91CC74EC100F08E4B /* JYNSString+Extension.h */,
+				5B7661FA1CC74EC100F08E4B /* JYNSString+Extension.m */,
 				5B74735F1CC60CF10077E635 /* Supporting Files */,
 			);
 			path = SeptWeiWei;
@@ -123,6 +131,7 @@
 				5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */,
 				5B7473701CC60CF20077E635 /* Info.plist */,
 				5B7473601CC60CF10077E635 /* main.m */,
+				5B7661F51CC7265600F08E4B /* JYDefine.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,7 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B74736F1CC60CF20077E635 /* LaunchScreen.storyboard in Resources */,
-				5B7473961CC60F080077E635 /* JYLoginController.xib in Resources */,
 				5B74736C1CC60CF20077E635 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,9 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7661F81CC7326D00F08E4B /* UIView+Extension.m in Sources */,
 				5B7473641CC60CF20077E635 /* AppDelegate.m in Sources */,
+				5B7661FB1CC74EC200F08E4B /* JYNSString+Extension.m in Sources */,
 				5B7473951CC60F080077E635 /* JYLoginController.m in Sources */,
-				5B7473991CC625770077E635 /* JYSubView.m in Sources */,
+				5B7473991CC625770077E635 /* JYBackgroundView.m in Sources */,
 				5B7473611CC60CF10077E635 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeptWeiWei/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezcam360.SeptWeiWei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeptWeiWei/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezcam360.SeptWeiWei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
