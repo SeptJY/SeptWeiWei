@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    self.window.rootViewController = [[JYLoginController alloc] init];
+    UINavigationController *navCtl = [[UINavigationController alloc] initWithRootViewController:[[JYLoginController alloc] init]];
+    self.window.rootViewController = navCtl;
     
     [self.window makeKeyAndVisible];
     

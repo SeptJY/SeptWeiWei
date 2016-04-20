@@ -13,10 +13,11 @@
 		5B74736F1CC60CF20077E635 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */; };
 		5B74737A1CC60CF30077E635 /* SeptWeiWeiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473791CC60CF30077E635 /* SeptWeiWeiTests.m */; };
 		5B7473851CC60CF30077E635 /* SeptWeiWeiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473841CC60CF30077E635 /* SeptWeiWeiUITests.m */; };
-		5B7473951CC60F080077E635 /* JYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473931CC60F080077E635 /* JYLoginController.m */; };
-		5B7473991CC625770077E635 /* JYBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473981CC625770077E635 /* JYBackgroundView.m */; };
-		5B7661F81CC7326D00F08E4B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7661F71CC7326D00F08E4B /* UIView+Extension.m */; };
-		5B7661FB1CC74EC200F08E4B /* JYNSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7661FA1CC74EC100F08E4B /* JYNSString+Extension.m */; };
+		84AC0DF41CC7C72B0064263E /* JYNSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */; };
+		84AC0DF51CC7C72B0064263E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DF31CC7C72B0064263E /* UIView+Extension.m */; };
+		84AC0E031CC7C7340064263E /* JYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DFE1CC7C7340064263E /* JYLoginController.m */; };
+		84AC0E041CC7C7340064263E /* JYBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0E021CC7C7340064263E /* JYBackgroundView.m */; };
+		84AC0E071CC7C7A50064263E /* JYSignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0E061CC7C7A50064263E /* JYSignUpController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,15 +51,17 @@
 		5B7473801CC60CF30077E635 /* SeptWeiWeiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeptWeiWeiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7473841CC60CF30077E635 /* SeptWeiWeiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeptWeiWeiUITests.m; sourceTree = "<group>"; };
 		5B7473861CC60CF30077E635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B7473921CC60F080077E635 /* JYLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLoginController.h; sourceTree = "<group>"; };
-		5B7473931CC60F080077E635 /* JYLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLoginController.m; sourceTree = "<group>"; };
-		5B7473971CC625770077E635 /* JYBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBackgroundView.h; sourceTree = "<group>"; };
-		5B7473981CC625770077E635 /* JYBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBackgroundView.m; sourceTree = "<group>"; };
-		5B7661F51CC7265600F08E4B /* JYDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYDefine.h; sourceTree = "<group>"; };
-		5B7661F61CC7326D00F08E4B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		5B7661F71CC7326D00F08E4B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		5B7661F91CC74EC100F08E4B /* JYNSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JYNSString+Extension.h"; sourceTree = "<group>"; };
-		5B7661FA1CC74EC100F08E4B /* JYNSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JYNSString+Extension.m"; sourceTree = "<group>"; };
+		84AC0DEE1CC7C72B0064263E /* JYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYDefine.h; sourceTree = "<group>"; };
+		84AC0DF01CC7C72B0064263E /* JYNSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JYNSString+Extension.h"; sourceTree = "<group>"; };
+		84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JYNSString+Extension.m"; sourceTree = "<group>"; };
+		84AC0DF21CC7C72B0064263E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		84AC0DF31CC7C72B0064263E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		84AC0DFD1CC7C7340064263E /* JYLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLoginController.h; sourceTree = "<group>"; };
+		84AC0DFE1CC7C7340064263E /* JYLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLoginController.m; sourceTree = "<group>"; };
+		84AC0E011CC7C7340064263E /* JYBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBackgroundView.h; sourceTree = "<group>"; };
+		84AC0E021CC7C7340064263E /* JYBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBackgroundView.m; sourceTree = "<group>"; };
+		84AC0E051CC7C7A50064263E /* JYSignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYSignUpController.h; sourceTree = "<group>"; };
+		84AC0E061CC7C7A50064263E /* JYSignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYSignUpController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,14 +112,9 @@
 		5B74735E1CC60CF10077E635 /* SeptWeiWei */ = {
 			isa = PBXGroup;
 			children = (
-				5B7473921CC60F080077E635 /* JYLoginController.h */,
-				5B7473931CC60F080077E635 /* JYLoginController.m */,
-				5B7473971CC625770077E635 /* JYBackgroundView.h */,
-				5B7473981CC625770077E635 /* JYBackgroundView.m */,
-				5B7661F61CC7326D00F08E4B /* UIView+Extension.h */,
-				5B7661F71CC7326D00F08E4B /* UIView+Extension.m */,
-				5B7661F91CC74EC100F08E4B /* JYNSString+Extension.h */,
-				5B7661FA1CC74EC100F08E4B /* JYNSString+Extension.m */,
+				84AC0DFB1CC7C7340064263E /* Account */,
+				84AC0DF61CC7C72F0064263E /* Main */,
+				84AC0DEB1CC7C72B0064263E /* Other */,
 				5B74735F1CC60CF10077E635 /* Supporting Files */,
 			);
 			path = SeptWeiWei;
@@ -131,7 +129,6 @@
 				5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */,
 				5B7473701CC60CF20077E635 /* Info.plist */,
 				5B7473601CC60CF10077E635 /* main.m */,
-				5B7661F51CC7265600F08E4B /* JYDefine.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +149,118 @@
 				5B7473861CC60CF30077E635 /* Info.plist */,
 			);
 			path = SeptWeiWeiUITests;
+			sourceTree = "<group>";
+		};
+		84AC0DEB1CC7C72B0064263E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DEC1CC7C72B0064263E /* Base */,
+				84AC0DED1CC7C72B0064263E /* Categroy */,
+				84AC0DEF1CC7C72B0064263E /* Heads */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		84AC0DEC1CC7C72B0064263E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		84AC0DED1CC7C72B0064263E /* Categroy */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DEE1CC7C72B0064263E /* JYDefine.h */,
+			);
+			path = Categroy;
+			sourceTree = "<group>";
+		};
+		84AC0DEF1CC7C72B0064263E /* Heads */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DF01CC7C72B0064263E /* JYNSString+Extension.h */,
+				84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */,
+				84AC0DF21CC7C72B0064263E /* UIView+Extension.h */,
+				84AC0DF31CC7C72B0064263E /* UIView+Extension.m */,
+			);
+			path = Heads;
+			sourceTree = "<group>";
+		};
+		84AC0DF61CC7C72F0064263E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DF71CC7C72F0064263E /* Home */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		84AC0DF71CC7C72F0064263E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DF81CC7C72F0064263E /* Controller */,
+				84AC0DF91CC7C72F0064263E /* Mdel */,
+				84AC0DFA1CC7C72F0064263E /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84AC0DF81CC7C72F0064263E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84AC0DF91CC7C72F0064263E /* Mdel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mdel;
+			sourceTree = "<group>";
+		};
+		84AC0DFA1CC7C72F0064263E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84AC0DFB1CC7C7340064263E /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DFC1CC7C7340064263E /* Controller */,
+				84AC0DFF1CC7C7340064263E /* Model */,
+				84AC0E001CC7C7340064263E /* View */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		84AC0DFC1CC7C7340064263E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DFD1CC7C7340064263E /* JYLoginController.h */,
+				84AC0DFE1CC7C7340064263E /* JYLoginController.m */,
+				84AC0E051CC7C7A50064263E /* JYSignUpController.h */,
+				84AC0E061CC7C7A50064263E /* JYSignUpController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84AC0DFF1CC7C7340064263E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84AC0E001CC7C7340064263E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0E011CC7C7340064263E /* JYBackgroundView.h */,
+				84AC0E021CC7C7340064263E /* JYBackgroundView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,12 +392,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7661F81CC7326D00F08E4B /* UIView+Extension.m in Sources */,
 				5B7473641CC60CF20077E635 /* AppDelegate.m in Sources */,
-				5B7661FB1CC74EC200F08E4B /* JYNSString+Extension.m in Sources */,
-				5B7473951CC60F080077E635 /* JYLoginController.m in Sources */,
-				5B7473991CC625770077E635 /* JYBackgroundView.m in Sources */,
+				84AC0E041CC7C7340064263E /* JYBackgroundView.m in Sources */,
 				5B7473611CC60CF10077E635 /* main.m in Sources */,
+				84AC0E071CC7C7A50064263E /* JYSignUpController.m in Sources */,
+				84AC0DF51CC7C72B0064263E /* UIView+Extension.m in Sources */,
+				84AC0E031CC7C7340064263E /* JYLoginController.m in Sources */,
+				84AC0DF41CC7C72B0064263E /* JYNSString+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

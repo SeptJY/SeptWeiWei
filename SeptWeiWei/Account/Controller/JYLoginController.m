@@ -14,6 +14,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "JYSignUpController.h"
 
 #define kRotationDuration 4.0
 
@@ -41,6 +42,14 @@
 @property (assign, nonatomic) float rotationDuration;
 
 @property (strong, nonatomic) UIView *bgView;
+@property (strong, nonatomic) UIView *centerView;
+
+
+@property (strong, nonatomic) UIImageView *userImgView;
+@property (strong, nonatomic) UIImageView *pwdImgView;
+
+@property (strong, nonatomic) UITextField *userText;
+@property (strong, nonatomic) UITextField *pwdText;
 
 @end
 
@@ -49,6 +58,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBarHidden = YES;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -256,6 +267,62 @@
     return _bgView;
 }
 
+- (UIView *)centerView
+{
+    if (!_centerView)
+    {
+        _centerView = [[UIView alloc] init];
+        _centerView.backgroundColor = [UIColor grayColor];
+        
+        [self.bgView addSubview:_centerView];
+    }
+    return _centerView;
+}
+
+- (UIImageView *)userImgView
+{
+    if (!_userImgView) {
+        _userImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_landing_nickname"]];
+        [self.bgView addSubview:_userImgView];
+    }
+    return _userImgView;
+}
+
+- (UIImageView *)pwdImgView
+{
+    if (!_pwdImgView) {
+        _pwdImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mm_normal"]];
+        [self.bgView addSubview:_pwdImgView];
+    }
+    return _pwdImgView;
+}
+
+- (UITextField *)userText
+{
+    if (!_userText) {
+        _userText = [[UITextField alloc] init];
+        
+        _userText.placeholder = @"UserName";
+        _userText.textColor = [UIColor blackColor];
+        
+        [self.bgView addSubview:_userText];
+    }
+    return _userText;
+}
+
+- (UITextField *)pwdText
+{
+    if (!_pwdText) {
+        _pwdText = [[UITextField alloc] init];
+        
+        _pwdText.placeholder = @"PassWord";
+        _pwdText.textColor = [UIColor blackColor];
+        
+        [self.bgView addSubview:_pwdText];
+    }
+    return _pwdText;
+}
+
 - (void)forgetPwdBtnAndSignUpBtnOnClick:(UIButton *)btn
 {
     switch (btn.tag) {
@@ -263,7 +330,7 @@
             NSLog(@"%@", btn.currentTitle);
             break;
         case 14:
-            NSLog(@"%@", btn.currentTitle);
+            [self.navigationController pushViewController:[[JYSignUpController alloc] init] animated:YES];
             break;
     }
 }
@@ -334,7 +401,18 @@
     
     self.signUpBtn.frame = CGRectMake(screenW - 70 - 20, self.forgetPwdBtn.y, 70, 30);
     
-    self.bgView.frame = CGRectMake(10, rotationW * 0.5 + 15, self.backgroundView.width - 20, self.backgroundView.height - (rotationW * 0.5 + 15) - 10);
+    self.bgView.frame = CGRectMake(10, rotationW * 0.5 + 25, self.backgroundView.width - 20, self.backgroundView.height - (rotationW * 0.5 + 15) - 25);
+    
+    self.centerView.frame = CGRectMake(15, (self.bgView.height - 1) * 0.5, self.bgView.width - 30, 1);
+    
+    CGFloat imgH = self.centerView.y - 16;
+    
+    self.userImgView.frame = CGRectMake(15, 8, imgH, imgH);
+    self.pwdImgView.frame = CGRectMake(15, self.centerView.y + 8, imgH, imgH);
+    
+    self.userText.frame = CGRectMake(self.userImgView.x + self.userImgView.width + 8, 8, self.bgView.width - (self.userImgView.x + self.userImgView.width + 8) - 15, imgH);
+    
+    self.pwdText.frame = CGRectMake(self.userImgView.x + self.userImgView.width + 8, self.pwdImgView.y, self.bgView.width - (self.userImgView.x + self.userImgView.width + 8) - 15, imgH);
 }
 
 @end
