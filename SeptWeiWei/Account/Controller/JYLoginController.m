@@ -8,17 +8,18 @@
 
 #import "JYLoginController.h"
 #import "JYBackgroundView.h"
-#import "JYDefine.h"
-#import "UIView+Extension.h"
-#import "JYNSString+Extension.h"
-
 #import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import "JYSignUpController.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 #define kRotationDuration 4.0
+#define rotationViewWidth (screenW - 40)
 
-@interface JYLoginController ()
+@interface JYLoginController () <TencentSessionDelegate>
+{
+    TencentOAuth *tencentOAuth;
+}
 
 @property (strong, nonatomic) JYBackgroundView *backgroundView;
 
@@ -41,7 +42,7 @@
 //转圈速度
 @property (assign, nonatomic) float rotationDuration;
 
-@property (strong, nonatomic) UIView *bgView;
+@property (strong, nonatomic) UIImageView *bgView;
 @property (strong, nonatomic) UIView *centerView;
 
 
@@ -65,6 +66,26 @@
     
     [self initRound];
     [self startRotation];
+    
+    [self.imageView addSubview:self.backgroundView];
+    [self.backgroundView addSubview:self.bgView];
+    [self.view addSubview:self.rotationView];
+    [self.view addSubview:self.imageView];
+    [self.view addSubview:self.weixinBtn];
+    [self.view addSubview:self.qqBtn];
+    [self.view addSubview:self.sinaBtn];
+    [self.view addSubview:self.othersLabel];
+    [self.view addSubview:self.leftLine];
+    [self.view addSubview:self.rightLine];
+    [self.view addSubview:self.forgetPwdBtn];
+    [self.view addSubview:self.signUpBtn];
+    [self.bgView addSubview:self.pwdText];
+    [self.bgView addSubview:self.centerView];
+    [self.bgView addSubview:self.userImgView];
+    [self.bgView addSubview:self.pwdImgView];
+    [self.bgView addSubview:self.userText];
+ 
+    [self setupConstraints];
 }
 
 - (void)initRound
@@ -101,7 +122,7 @@
         
         _backgroundView = [[JYBackgroundView alloc] init];
         
-        [self.imageView addSubview:_backgroundView];
+        
      }
     return _backgroundView;
 }
@@ -113,12 +134,11 @@
         _rotationView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login_rotation_icon"]];
         
         _rotationView.userInteractionEnabled = YES;
-        
-        [self.view addSubview:_rotationView];
     }
     return _rotationView;
 }
 
+/** 背景图片 */
 - (UIImageView *)imageView
 {
     if (!_imageView) {
@@ -126,8 +146,6 @@
         _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login_bg_icon"]];
         
         _imageView.userInteractionEnabled = YES;
-        
-        [self.view addSubview:_imageView];
     }
     return _imageView;
 }
@@ -141,8 +159,6 @@
         [_weixinBtn setImage:[UIImage imageNamed:@"ic_landing_wechat"] forState:UIControlStateNormal];
         [_weixinBtn addTarget:self action:@selector(otherLoginBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         _weixinBtn.tag = 10;
-        
-        [self.view addSubview:_weixinBtn];
     }
     return _weixinBtn;
 }
@@ -156,8 +172,6 @@
         [_qqBtn setImage:[UIImage imageNamed:@"ic_landing_qq"] forState:UIControlStateNormal];
         [_qqBtn addTarget:self action:@selector(otherLoginBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         _qqBtn.tag = 11;
-        
-        [self.view addSubview:_qqBtn];
     }
     return _qqBtn;
 }
@@ -171,8 +185,6 @@
         [_sinaBtn setImage:[UIImage imageNamed:@"ic_landing_microblog"] forState:UIControlStateNormal];
         [_sinaBtn addTarget:self action:@selector(otherLoginBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         _sinaBtn.tag = 12;
-        
-        [self.view addSubview:_sinaBtn];
     }
     return _sinaBtn;
 }
@@ -186,8 +198,6 @@
         _othersLabel.text = @"第三方登录";
         _othersLabel.textColor = [UIColor grayColor];
         _othersLabel.font = setFont(12);
-        
-        [self.view addSubview:_othersLabel];
     }
     return _othersLabel;
 }
@@ -198,8 +208,6 @@
         
         _leftLine = [[UIView alloc] init];
         _leftLine.backgroundColor = MainBackgroundColor;
-        
-        [self.view addSubview:_leftLine];
     }
     return _leftLine;
 }
@@ -254,15 +262,13 @@
     return _signUpBtn;
 }
 
-- (UIView *)bgView
+- (UIImageView *)bgView
 {
     if (!_bgView) {
         
-        _bgView = [[UIView alloc] init];
+        _bgView = [[UIImageView alloc] init];
         
-        _bgView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
-        
-        [self.backgroundView addSubview:_bgView];
+        _bgView.image = [UIImage imageNamed:@"login_small_bg_view"];
     }
     return _bgView;
 }
@@ -273,8 +279,6 @@
     {
         _centerView = [[UIView alloc] init];
         _centerView.backgroundColor = [UIColor grayColor];
-        
-        [self.bgView addSubview:_centerView];
     }
     return _centerView;
 }
@@ -283,7 +287,6 @@
 {
     if (!_userImgView) {
         _userImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_landing_nickname"]];
-        [self.bgView addSubview:_userImgView];
     }
     return _userImgView;
 }
@@ -292,7 +295,6 @@
 {
     if (!_pwdImgView) {
         _pwdImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mm_normal"]];
-        [self.bgView addSubview:_pwdImgView];
     }
     return _pwdImgView;
 }
@@ -304,8 +306,6 @@
         
         _userText.placeholder = @"UserName";
         _userText.textColor = [UIColor blackColor];
-        
-        [self.bgView addSubview:_userText];
     }
     return _userText;
 }
@@ -317,8 +317,6 @@
         
         _pwdText.placeholder = @"PassWord";
         _pwdText.textColor = [UIColor blackColor];
-        
-        [self.bgView addSubview:_pwdText];
     }
     return _pwdText;
 }
@@ -337,7 +335,60 @@
 
 - (void)loginBtnOnClick
 {
-    JYLog(@"登录");
+//    JYLog(@"登录");
+    
+}
+
+#pragma mark -------------------------> 代理
+#pragma mark -- TencentSessionDelegate
+//登陆完成调用
+- (void)tencentDidLogin
+{
+//    resultLable.text = @"登录完成";
+    JYLog(@"登录完成");
+    
+    if (tencentOAuth.accessToken && 0 != [tencentOAuth.accessToken length])
+    {
+        //  记录登录用户的OpenID、Token以及过期时间
+//        tokenLable.text = tencentOAuth.accessToken;
+        [tencentOAuth getUserInfo];
+    }
+    else
+    {
+//        tokenLable.text = @"登录不成功 没有获取accesstoken";
+        JYLog(@"登录不成功 没有获取accesstoken");
+    }
+}
+
+//非网络错误导致登录失败：
+-(void)tencentDidNotLogin:(BOOL)cancelled
+{
+    NSLog(@"tencentDidNotLogin");
+    if (cancelled)
+    {
+//        resultLable.text = @"用户取消登录";
+        JYLog(@"用户取消登录");
+    }else{
+//        resultLable.text = @"登录失败";
+        JYLog(@"登录失败");
+    }
+}
+// 网络错误导致登录失败：
+-(void)tencentDidNotNetWork
+{
+    NSLog(@"tencentDidNotNetWork");
+//    resultLable.text = @"无网络连接，请设置网络";
+    JYLog(@"无网络连接，请设置网络");
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)getUserInfoResponse:(APIResponse *)response
+{
+    NSLog(@"respons:%@",response.jsonResponse);
 }
 
 - (void)otherLoginBtnOnClick:(UIButton *)btn
@@ -347,7 +398,12 @@
             JYLog(@"微信登录");
             break;
         case 11:
-            JYLog(@"QQ登录");
+        {
+            tencentOAuth = [[TencentOAuth alloc]initWithAppId:@"1105198010"andDelegate:self];
+            //4，设置需要的权限列表，此处尽量使用什么取什么。
+            NSArray *permissions= [NSArray arrayWithObjects:@"get_user_info", @"get_simple_userinfo", @"add_t", nil];
+            [tencentOAuth authorize:permissions inSafari:NO];
+        }
             break;
         case 12:
             JYLog(@"新浪登录");
@@ -365,16 +421,150 @@
     
     [btn addTarget:self action:@selector(forgetPwdBtnAndSignUpBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:btn];
-    
     return btn;
 }
 
+- (void)setupConstraints
+{
+    __weak JYLoginController *weakSelf = self;
+    // 图片背景
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.view);
+        make.leading.equalTo(weakSelf.view);
+        make.trailing.equalTo(weakSelf.view);
+        make.bottom.equalTo(weakSelf.view);
+    }];
+    
+    // 自定义画图的背景view
+    [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(weakSelf.view);
+        make.top.equalTo(weakSelf.view).offset(100);
+        make.size.mas_equalTo(CGSizeMake(rotationViewWidth, rotationViewWidth * 9/ 14));
+    }];
+    
+    // 旋转的图片
+    [self.rotationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(weakSelf.view);
+        make.size.mas_equalTo(CGSizeMake(rotationViewWidth * 5 / 14 - 10, rotationViewWidth * 5 / 14 - 10));
+        make.top.equalTo(weakSelf.view).offset(100 - (rotationViewWidth * 5 / 14 - 10) * 0.5);
+    }];
+    
+    // 输入框的背景view
+    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(weakSelf.backgroundView).offset(-20);
+        make.leading.equalTo(weakSelf.backgroundView).offset(20);
+        make.trailing.equalTo(weakSelf.backgroundView).offset(-20);
+        make.top.mas_equalTo(weakSelf.rotationView.mas_bottom).offset(30);
+    }];
+    
+    // 背景view的中心线
+    [self.centerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(weakSelf.bgView).offset(-10);
+        make.leading.equalTo(weakSelf.bgView).offset(10);
+        make.height.mas_equalTo(1);
+        make.centerY.mas_equalTo(weakSelf.bgView);
+    }];
+    
+    // 用户名的图标
+    [self.userImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(weakSelf.bgView).offset(10);
+        make.centerY.mas_equalTo(weakSelf.userText);
+        make.size.mas_equalTo(CGSizeMake(22.0, 22.0));
+    }];
+    
+    // 用户名的输入框
+    [self.userText mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(weakSelf.centerView.mas_top).offset(5);
+        make.top.equalTo(weakSelf.bgView).offset(5);
+        make.trailing.equalTo(weakSelf.bgView).offset(-5);
+        make.left.mas_equalTo(weakSelf.userImgView.mas_right).offset(5);
+    }];
+    
+    // 密码的图标
+    [self.pwdImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(weakSelf.bgView).offset(7);
+        make.centerY.mas_equalTo(weakSelf.pwdText);
+        make.size.mas_equalTo(CGSizeMake(28.0, 28.0));
+    }];
+    
+    // 密码的输入框
+    [self.pwdText mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(weakSelf.bgView).offset(-5);
+        make.top.equalTo(weakSelf.centerView.mas_bottom).offset(5);
+        make.trailing.equalTo(weakSelf.userText);
+        make.left.mas_equalTo(weakSelf.pwdImgView.mas_right).offset(5);
+    }];
+    
+    // 登录按钮
+    [self.loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(weakSelf.backgroundView.mas_bottom).offset(25);
+        make.height.mas_equalTo(40);
+        make.leading.equalTo(weakSelf.view).offset(20);
+        make.trailing.equalTo(weakSelf.view).offset(-20);
+    }];
+    
+    // 忘记密码
+    [self.forgetPwdBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(weakSelf.loginBtn);
+        make.top.mas_equalTo(weakSelf.loginBtn.mas_bottom).offset(8);
+        make.size.mas_equalTo(CGSizeMake(70, 30));
+    }];
+    
+    // 注册按钮
+    [self.signUpBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(weakSelf.loginBtn);
+        make.size.mas_equalTo(CGSizeMake(70, 30));
+        make.top.mas_equalTo(weakSelf.forgetPwdBtn);
+    }];
+    
+    // qq登录
+    [self.qqBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(weakSelf.view).offset(50);
+        make.bottom.equalTo(weakSelf.view).offset(-20);
+        make.width.mas_equalTo(weakSelf.qqBtn.mas_height);
+    }];
+    
+    // 微信登录
+    [self.weixinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(weakSelf.qqBtn.mas_right).offset(60);
+        make.right.mas_equalTo(weakSelf.sinaBtn.mas_left).offset(-60);
+        make.height.bottom.width.mas_equalTo(weakSelf.qqBtn);
+    }];
+    
+    // 新浪登录
+    [self.sinaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(weakSelf.view).offset(-50);
+        make.width.height.bottom.mas_equalTo(weakSelf.qqBtn);
+    }];
+    
+    // 第三方label
+    [self.othersLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(weakSelf.weixinBtn.mas_top).offset(-10);
+        make.centerX.equalTo(weakSelf.view);
+    }];
+    
+    // lable 左边的线
+    [self.leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(weakSelf.view).offset(20);
+        make.right.mas_equalTo(weakSelf.othersLabel.mas_left).offset(-20);
+        make.height.mas_equalTo(1);
+        make.centerY.mas_equalTo(weakSelf.othersLabel);
+    }];
+    
+    // lable 左边的线
+    [self.rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(weakSelf.view).offset(20);
+        make.left.mas_equalTo(weakSelf.othersLabel.mas_right).offset(20);
+        make.height.centerY.mas_equalTo(weakSelf.leftLine);
+    }];
+}
+
+/**
 - (void)viewWillLayoutSubviews
 {
     self.imageView.frame = self.view.bounds;
     
-    self.backgroundView.frame = CGRectMake(20, 150, screenW - 40, (screenW - 40) * 9 / 14);
+    self.backgroundView.frame = CGRectMake(20, 150, rotationViewWidth, rotationViewWidth * 9 / 14);
     
     CGFloat rotationW = self.backgroundView.width * 5 / 14 - 10;
     CGFloat rotationH = rotationW;
@@ -414,5 +604,6 @@
     
     self.pwdText.frame = CGRectMake(self.userImgView.x + self.userImgView.width + 8, self.pwdImgView.y, self.bgView.width - (self.userImgView.x + self.userImgView.width + 8) - 15, imgH);
 }
+*/
 
 @end

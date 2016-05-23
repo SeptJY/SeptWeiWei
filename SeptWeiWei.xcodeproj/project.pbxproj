@@ -13,11 +13,22 @@
 		5B74736F1CC60CF20077E635 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */; };
 		5B74737A1CC60CF30077E635 /* SeptWeiWeiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473791CC60CF30077E635 /* SeptWeiWeiTests.m */; };
 		5B7473851CC60CF30077E635 /* SeptWeiWeiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7473841CC60CF30077E635 /* SeptWeiWeiUITests.m */; };
+		5B78BD9D1CF032C000C2A84A /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B78BD9B1CF032C000C2A84A /* TencentOpenApi_IOS_Bundle.bundle */; };
+		5B78BD9E1CF032C000C2A84A /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BD9C1CF032C000C2A84A /* TencentOpenAPI.framework */; };
+		5B78BDA01CF0332500C2A84A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BD9F1CF0332500C2A84A /* libz.tbd */; };
+		5B78BDA21CF0333200C2A84A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BDA11CF0333200C2A84A /* CoreGraphics.framework */; };
+		5B78BDA41CF0334300C2A84A /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BDA31CF0334300C2A84A /* libstdc++.tbd */; };
+		5B78BDA61CF0335200C2A84A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BDA51CF0335200C2A84A /* CoreTelephony.framework */; };
+		5B78BDA81CF0336000C2A84A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BDA71CF0336000C2A84A /* libsqlite3.tbd */; };
+		5B78BDAA1CF0336900C2A84A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BDA91CF0336900C2A84A /* SystemConfiguration.framework */; };
+		5B78BDAC1CF0338300C2A84A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BDAB1CF0338300C2A84A /* libiconv.tbd */; };
+		5B78BDAE1CF0338C00C2A84A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B78BDAD1CF0338C00C2A84A /* Security.framework */; };
 		84AC0DF41CC7C72B0064263E /* JYNSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */; };
 		84AC0DF51CC7C72B0064263E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DF31CC7C72B0064263E /* UIView+Extension.m */; };
 		84AC0E031CC7C7340064263E /* JYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DFE1CC7C7340064263E /* JYLoginController.m */; };
 		84AC0E041CC7C7340064263E /* JYBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0E021CC7C7340064263E /* JYBackgroundView.m */; };
 		84AC0E071CC7C7A50064263E /* JYSignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0E061CC7C7A50064263E /* JYSignUpController.m */; };
+		DAB7126A28F06F1E4081F6F0 /* libPods-SeptWeiWei.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CAA081998F61D2F256105F3 /* libPods-SeptWeiWei.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CAA081998F61D2F256105F3 /* libPods-SeptWeiWei.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SeptWeiWei.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C00B17F83A00C9E5960EC3E /* Pods-SeptWeiWei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeptWeiWei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeptWeiWei/Pods-SeptWeiWei.debug.xcconfig"; sourceTree = "<group>"; };
+		428F7F449E31D07EFD4979C3 /* Pods-SeptWeiWei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeptWeiWei.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeptWeiWei/Pods-SeptWeiWei.release.xcconfig"; sourceTree = "<group>"; };
 		5B74735C1CC60CF00077E635 /* SeptWeiWei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeptWeiWei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7473601CC60CF10077E635 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5B7473621CC60CF10077E635 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,11 +65,22 @@
 		5B7473801CC60CF30077E635 /* SeptWeiWeiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeptWeiWeiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7473841CC60CF30077E635 /* SeptWeiWeiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeptWeiWeiUITests.m; sourceTree = "<group>"; };
 		5B7473861CC60CF30077E635 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84AC0DEE1CC7C72B0064263E /* JYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYDefine.h; sourceTree = "<group>"; };
-		84AC0DF01CC7C72B0064263E /* JYNSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JYNSString+Extension.h"; sourceTree = "<group>"; };
-		84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JYNSString+Extension.m"; sourceTree = "<group>"; };
-		84AC0DF21CC7C72B0064263E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		84AC0DF31CC7C72B0064263E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		5B78BD9A1CEFF96000C2A84A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5B78BD9B1CF032C000C2A84A /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		5B78BD9C1CF032C000C2A84A /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		5B78BD9F1CF0332500C2A84A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5B78BDA11CF0333200C2A84A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5B78BDA31CF0334300C2A84A /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		5B78BDA51CF0335200C2A84A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		5B78BDA71CF0336000C2A84A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5B78BDA91CF0336900C2A84A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5B78BDAB1CF0338300C2A84A /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		5B78BDAD1CF0338C00C2A84A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		84AC0DEE1CC7C72B0064263E /* JYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYDefine.h; path = ../Categroy/JYDefine.h; sourceTree = "<group>"; };
+		84AC0DF01CC7C72B0064263E /* JYNSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JYNSString+Extension.h"; path = "../Heads/JYNSString+Extension.h"; sourceTree = "<group>"; };
+		84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "JYNSString+Extension.m"; path = "../Heads/JYNSString+Extension.m"; sourceTree = "<group>"; };
+		84AC0DF21CC7C72B0064263E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "../Heads/UIView+Extension.h"; sourceTree = "<group>"; };
+		84AC0DF31CC7C72B0064263E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "../Heads/UIView+Extension.m"; sourceTree = "<group>"; };
 		84AC0DFD1CC7C7340064263E /* JYLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLoginController.h; sourceTree = "<group>"; };
 		84AC0DFE1CC7C7340064263E /* JYLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLoginController.m; sourceTree = "<group>"; };
 		84AC0E011CC7C7340064263E /* JYBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBackgroundView.h; sourceTree = "<group>"; };
@@ -69,6 +94,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B78BDAE1CF0338C00C2A84A /* Security.framework in Frameworks */,
+				5B78BDAC1CF0338300C2A84A /* libiconv.tbd in Frameworks */,
+				5B78BDAA1CF0336900C2A84A /* SystemConfiguration.framework in Frameworks */,
+				5B78BDA81CF0336000C2A84A /* libsqlite3.tbd in Frameworks */,
+				5B78BDA61CF0335200C2A84A /* CoreTelephony.framework in Frameworks */,
+				5B78BDA41CF0334300C2A84A /* libstdc++.tbd in Frameworks */,
+				5B78BDA21CF0333200C2A84A /* CoreGraphics.framework in Frameworks */,
+				5B78BDA01CF0332500C2A84A /* libz.tbd in Frameworks */,
+				DAB7126A28F06F1E4081F6F0 /* libPods-SeptWeiWei.a in Frameworks */,
+				5B78BD9E1CF032C000C2A84A /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +124,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3355E62F567DD5E6CBF9CEDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B78BDAD1CF0338C00C2A84A /* Security.framework */,
+				5B78BDAB1CF0338300C2A84A /* libiconv.tbd */,
+				5B78BDA91CF0336900C2A84A /* SystemConfiguration.framework */,
+				5B78BDA71CF0336000C2A84A /* libsqlite3.tbd */,
+				5B78BDA51CF0335200C2A84A /* CoreTelephony.framework */,
+				5B78BDA31CF0334300C2A84A /* libstdc++.tbd */,
+				5B78BDA11CF0333200C2A84A /* CoreGraphics.framework */,
+				5B78BD9F1CF0332500C2A84A /* libz.tbd */,
+				0CAA081998F61D2F256105F3 /* libPods-SeptWeiWei.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B7473531CC60CEE0077E635 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +147,8 @@
 				5B7473781CC60CF30077E635 /* SeptWeiWeiTests */,
 				5B7473831CC60CF30077E635 /* SeptWeiWeiUITests */,
 				5B74735D1CC60CF00077E635 /* Products */,
+				B9AD560D7A308733766B1BB6 /* Pods */,
+				3355E62F567DD5E6CBF9CEDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +182,7 @@
 				5B74736D1CC60CF20077E635 /* LaunchScreen.storyboard */,
 				5B7473701CC60CF20077E635 /* Info.plist */,
 				5B7473601CC60CF10077E635 /* main.m */,
+				5B78BD9A1CEFF96000C2A84A /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,7 +225,10 @@
 		84AC0DED1CC7C72B0064263E /* Categroy */ = {
 			isa = PBXGroup;
 			children = (
-				84AC0DEE1CC7C72B0064263E /* JYDefine.h */,
+				84AC0DF01CC7C72B0064263E /* JYNSString+Extension.h */,
+				84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */,
+				84AC0DF21CC7C72B0064263E /* UIView+Extension.h */,
+				84AC0DF31CC7C72B0064263E /* UIView+Extension.m */,
 			);
 			path = Categroy;
 			sourceTree = "<group>";
@@ -179,10 +236,9 @@
 		84AC0DEF1CC7C72B0064263E /* Heads */ = {
 			isa = PBXGroup;
 			children = (
-				84AC0DF01CC7C72B0064263E /* JYNSString+Extension.h */,
-				84AC0DF11CC7C72B0064263E /* JYNSString+Extension.m */,
-				84AC0DF21CC7C72B0064263E /* UIView+Extension.h */,
-				84AC0DF31CC7C72B0064263E /* UIView+Extension.m */,
+				5B78BD9B1CF032C000C2A84A /* TencentOpenApi_IOS_Bundle.bundle */,
+				5B78BD9C1CF032C000C2A84A /* TencentOpenAPI.framework */,
+				84AC0DEE1CC7C72B0064263E /* JYDefine.h */,
 			);
 			path = Heads;
 			sourceTree = "<group>";
@@ -263,6 +319,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B9AD560D7A308733766B1BB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C00B17F83A00C9E5960EC3E /* Pods-SeptWeiWei.debug.xcconfig */,
+				428F7F449E31D07EFD4979C3 /* Pods-SeptWeiWei.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,9 +335,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B7473891CC60CF30077E635 /* Build configuration list for PBXNativeTarget "SeptWeiWei" */;
 			buildPhases = (
+				22CBCAE06C8AAEDB08405308 /* Check Pods Manifest.lock */,
 				5B7473581CC60CF00077E635 /* Sources */,
 				5B7473591CC60CF00077E635 /* Frameworks */,
 				5B74735A1CC60CF00077E635 /* Resources */,
+				F22A3C1B3A022B656A8FA866 /* Embed Pods Frameworks */,
+				F72C663896F6CE6CD568F47A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B78BD9D1CF032C000C2A84A /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				5B74736F1CC60CF20077E635 /* LaunchScreen.storyboard in Resources */,
 				5B74736C1CC60CF20077E635 /* Assets.xcassets in Resources */,
 			);
@@ -386,6 +455,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22CBCAE06C8AAEDB08405308 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F22A3C1B3A022B656A8FA866 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeptWeiWei/Pods-SeptWeiWei-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F72C663896F6CE6CD568F47A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SeptWeiWei/Pods-SeptWeiWei-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B7473581CC60CF00077E635 /* Sources */ = {
@@ -529,25 +646,69 @@
 		};
 		5B74738A1CC60CF30077E635 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C00B17F83A00C9E5960EC3E /* Pods-SeptWeiWei.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SeptWeiWei/Other/Heads",
+				);
+				GCC_PREFIX_HEADER = SeptWeiWei/PrefixHeader.pch;
 				INFOPLIST_FILE = SeptWeiWei/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezcam360.SeptWeiWei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		5B74738B1CC60CF30077E635 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428F7F449E31D07EFD4979C3 /* Pods-SeptWeiWei.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"$(ARCHS_STANDARD_32_BIT)",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SeptWeiWei/Other/Heads",
+				);
+				GCC_PREFIX_HEADER = SeptWeiWei/PrefixHeader.pch;
 				INFOPLIST_FILE = SeptWeiWei/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ezcam360.SeptWeiWei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
